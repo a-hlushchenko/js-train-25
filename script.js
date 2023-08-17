@@ -243,10 +243,14 @@ async function* gatherData() {
 async function displayData () {
   const gather = gatherData();
 
+  const result1 = await gather.next();
+  const result2 = await gather.next();
+  const result3 = await gather.next();
+
   console.log("Завдання: 6 ==============================");
-  console.log(await gather.next());
-  console.log(await gather.next());
-  console.log(await gather.next());
+  console.log(result1.value);
+  console.log(result2.value);
+  console.log(result3.value);
 }
 
 // Оголошуємо асинхронну функцію-генератор з ім'ям gatherData
